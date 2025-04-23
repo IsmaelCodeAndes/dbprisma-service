@@ -39,6 +39,10 @@ lerna-debug.log*
 
 # IDEs and editors
 /.idea
+
+# Package manager
+package.json
+pnpm-lock.yaml
 .project
 .classpath
 .c9/
