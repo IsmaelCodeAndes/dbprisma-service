@@ -28,6 +28,12 @@
 
 Este microservicio es el centro de manejo de **migraciones y administración del esquema Prisma** para todos los microservicios de la arquitectura. Aquí se define el `schema.prisma` maestro y se ejecutan todas las migraciones y seeds.
 
+## Uso con Docker Compose y persistencia
+
+- Al levantar el entorno con `docker-compose up --build`, este microservicio aplica automáticamente las migraciones Prisma a la base de datos Docker.
+- La base de datos es persistente usando el volumen `postgres_data`.
+- Solo se borran los datos si ejecutas `docker-compose down -v` en la raíz del proyecto.
+
 ## ¿Cómo funciona?
 - **No expone endpoints ni lógica de negocio.**
 - Aquí se agregan/modifican todos los modelos de la base de datos.
