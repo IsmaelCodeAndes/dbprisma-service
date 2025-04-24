@@ -37,3 +37,9 @@ model AgenciaProyecto {
   @@index([project_id])
   @@map("agency_projects")
 }
+
+model empresas {
+  id     String    @id @default(uuid()) @db.Uuid
+  nombre String    @db.VarChar(100)
+  created_at DateTime? @default(now()) @db.Timestamp(6)
+}
