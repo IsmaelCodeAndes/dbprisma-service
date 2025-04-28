@@ -38,10 +38,18 @@ model AgenciaProyecto {
   @@map("agency_projects")
 }
 
-model empresas {
-  id     String    @id @default(uuid()) @db.Uuid
-  nombre String    @db.VarChar(100)
-  created_at DateTime? @default(now()) @db.Timestamp(6)
+model empresa {
+  empresa_id       Int      @id @default(autoincrement())
+  razon_social     String
+  ruc              String
+  direccion        String
+  telefono         String
+  correo           String
+  logo_url         String
+  es_activa        Boolean  @default(true)
+  created_at       DateTime @default(now())
+  updated_at       DateTime @updatedAt
+  nombre_comercial String
 }
 
 model proyectos_inmobiliarios {
