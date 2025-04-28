@@ -43,3 +43,19 @@ model empresas {
   nombre String    @db.VarChar(100)
   created_at DateTime? @default(now()) @db.Timestamp(6)
 }
+
+model proyectos_inmobiliarios {
+  proyecto_id        Int      @id @default(autoincrement())
+  empresa_id         Int
+  nombre             String   @db.VarChar(200)
+  ubicacion          String   @db.Text
+  descripcion        String?  @db.Text
+  fecha_inicio       DateTime @db.Date
+  fecha_fin          DateTime? @db.Date
+  estado_propiedad   String   @db.VarChar(50)
+  created_at         DateTime @default(now()) @db.Timestamp(6)
+  updated_at         DateTime @updatedAt @db.Timestamp(6)
+  telefono_contacto  String?  @db.VarChar(15)
+  email_contacto     String?  @db.VarChar(100)
+  ciudad             String?  @db.VarChar(255)
+}
