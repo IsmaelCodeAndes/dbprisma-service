@@ -46,7 +46,7 @@ model empresas {
 
 model proyectos_inmobiliarios {
   proyecto_id        Int      @id @default(autoincrement())
-  empresa_id         Int
+  empresa_id         Int?
   nombre             String   @db.VarChar(200)
   ubicacion          String   @db.Text
   descripcion        String?  @db.Text
