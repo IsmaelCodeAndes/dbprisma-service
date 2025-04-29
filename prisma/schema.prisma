@@ -67,3 +67,20 @@ model proyectos_inmobiliarios {
   email_contacto     String? 
   ciudad             String? 
 }
+
+model personas {
+  persona_id           Int      @id @default(autoincrement())
+  nombre               String
+  apellido_paterno     String
+  apellido_materno     String
+  tipo_documento_id    Int
+  numero_documento     String   @unique
+  telefono_principal   String
+  telefono_secundario  String?
+  direccion            String
+  correo_electronico   String   @unique
+  fecha_nacimiento     DateTime
+  genero_id            Int
+  created_at           DateTime @default(now())
+  updated_at           DateTime @updatedAt
+}
