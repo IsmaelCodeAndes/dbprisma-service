@@ -84,3 +84,12 @@ model personas {
   created_at           DateTime @default(now())
   updated_at           DateTime @updatedAt
 }
+
+model tipo_documento {
+  tipo_documento_id    Int      @id @default(autoincrement())
+  nombre               String
+  descripcion          String
+  longitud_max             Int
+  es_activo            Boolean  @default(true)
+  created_at           DateTime @default(now())
+}
