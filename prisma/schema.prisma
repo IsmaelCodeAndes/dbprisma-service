@@ -94,7 +94,7 @@ model tipo_documento {
   created_at           DateTime @default(now())
 }
 
-model rol {
+model roles {
     rol_id      Int      @id @default(autoincrement())
     nombre      String
     descripcion String
@@ -104,14 +104,14 @@ model rol {
 }
 
 model usuarios {
-    usuario_id      Int      @id @default(autoincrement())
-    persona_id      Int?
-    username        String   @unique
-    password_hash   String
-    es_activo       Boolean  @default(true)
-    es_super_admin  Boolean  @default(false)
-    created_at      DateTime @default(now())
-    updated_at      DateTime @updatedAt
+    usuario_id        Int      @id @default(autoincrement())
+    persona_id        Int?
+    username          String   @unique
+    password_hash     String
+    esta_activo       Boolean  @default(true)
+    es_super_admin    Boolean  @default(false)
+    created_at        DateTime @default(now())
+    updated_at        DateTime @updatedAt
 }
 
 model usuario_opciones {
@@ -123,7 +123,7 @@ model usuario_opciones {
     puede_editar                Boolean
     puede_eliminar              Boolean
     asignado_por                String
-    asignado_en                 DateTime @default(now())
+    asignado_en                 DateTime
 }
 
 model usuario_empresa_roles {
