@@ -93,3 +93,43 @@ model tipo_documento {
   es_activo            Boolean  @default(true)
   created_at           DateTime @default(now())
 }
+
+model rol {
+    rol_id      Int      @id @default(autoincrement())
+    nombre      String
+    descripcion String
+    es_global   Boolean  @default(false)
+    created_at  DateTime @default(now())
+    updated_at  DateTime @updatedAt
+}
+
+model usuarios {
+    usuario_id      Int      @id @default(autoincrement())
+    persona_id      Int?
+    username        String   @unique
+    password_hash   String
+    es_activo       Boolean  @default(true)
+    es_super_admin  Boolean  @default(false)
+    created_at      DateTime @default(now())
+    updated_at      DateTime @updatedAt
+}
+
+model usuario_opciones {
+    @@id([usuario_id, empresa_modulo_opcion_id])
+    usuario_id                  Int
+    empresa_modulo_opcion_id    Int
+    puede_ver                   Boolean
+    puede_crear                 Boolean
+    puede_editar                Boolean
+    puede_eliminar              Boolean
+    asignado_por                String
+    asignado_en                 DateTime @default(now())
+}
+
+model usuario_empresa_roles {
+  id          Int @id @default(autoincrement())
+  usuario_id  Int
+  empresa_id  Int
+  rol_id      Int
+  created_at  DateTime @default(now())
+}
