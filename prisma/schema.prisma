@@ -122,7 +122,7 @@ model usuario_opciones {
     puede_crear                 Boolean
     puede_editar                Boolean
     puede_eliminar              Boolean
-    asignado_por                String
+    asignado_por                Int
     asignado_en                 DateTime
 }
 
