@@ -133,3 +133,18 @@ model usuario_empresa_roles {
   rol_id      Int
   created_at  DateTime @default(now())
 }
+
+model clientes {
+  cliente_id            Int      @id @default(autoincrement())
+  empresa_id            Int
+  persona_id            Int
+  medio_captacion_id    Int
+  ejecutivo_asignado_id Int
+  estado_civil_id       Int
+  profesion_ocupacion   String
+  ingreso_mensual       Decimal @db.Decimal(12, 2)
+  referencias           String
+  observaciones         String
+  created_at            DateTime @default(now())
+  updated_at            DateTime @updatedAt
+}
