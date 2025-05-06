@@ -167,3 +167,12 @@ model medio_contacto {
   creado_por        String
   creado_en         DateTime @default(now())
 }
+
+model tipo_atencion {
+  tipo_atencion_id Int @id @default(autoincrement())
+  nombre           String
+  descripcion      String
+  activo           Boolean
+  creado_por       String
+  creado_en        DateTime @default(now())
+}
