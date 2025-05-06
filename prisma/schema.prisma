@@ -148,3 +148,22 @@ model clientes {
   created_at            DateTime @default(now())
   updated_at            DateTime @updatedAt
 }
+
+model opciones {
+  opcion_id       Int      @id @default(autoincrement())
+  nombre          String   
+  descripcion     String  
+  icono           String   
+  es_activo       Boolean  @default(true)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model medio_contacto {
+  medio_contacto_id Int @id @default(autoincrement())
+  nombre            String
+  descripcion       String
+  activo            Boolean
+  creado_por        String
+  creado_en         DateTime @default(now())
+}
